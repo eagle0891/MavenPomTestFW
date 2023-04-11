@@ -14,14 +14,26 @@ public class LoginPage extends TestBase {
     @FindBy(name="password")
     WebElement passwordField;
 
-    @FindBy(xpath="//div[contains(@class, 'sui fluid large blue submit button')]")
+    @FindBy(xpath="//div[contains(@class, 'ui fluid large blue submit button')]")
     WebElement loginButton;
 
-    @FindBy(xpath="//div/a[contains(@href, 'https://register.cogmento.com/password/reset/request/?lang=en-GB']")
+    @FindBy(xpath="//a[contains(@href, 'https://register.cogmento.com/password/reset/request/?lang=en-GB')]")
     WebElement forgotPasswordLink;
 
-    @FindBy(xpath="//div[contains(@class, 'ui message')]")
+    @FindBy(xpath="//div[2][contains(@class, 'ui message')]")
     WebElement signUpMessage;
+
+    @FindBy(xpath="//a[contains(@href, 'https://api.cogmento.com/register?lang=en-GB')]")
+    WebElement signUpLink;
+
+    @FindBy(xpath = "//div[contains(@class, 'ui negative message')]")
+    WebElement failedLoginValidationBlock;
+
+    @FindBy(xpath = "//div[contains(@class, 'ui negative message')]/div[contains(@class, 'header')]")
+    WebElement failedLoginValidationMessageLineOne;
+
+    @FindBy(xpath = "//div[contains(@class, 'ui negative message')]/p")
+    WebElement failedLoginValidationMessageLineTwo;
 
     //Initializing page objects
     public LoginPage(){
@@ -33,16 +45,20 @@ public class LoginPage extends TestBase {
         return driver.getTitle();
     }
 
-    public boolean validateForgotPasswordLink(){
-        return forgotPasswordLink.isDisplayed();
+    public WebElement forgotPasswordLink(){
+        return forgotPasswordLink;
     }
 
-    public String validateForgotPasswordText(){
+    public String forgotPasswordText(){
         return forgotPasswordLink.getText();
     }
 
-    public String validateSignUpMessage(){
+    public String signUpMessageText(){
         return signUpMessage.getText();
+    }
+
+    public WebElement getSignUpMessageLink(){
+        return signUpLink;
     }
 
     public HomePage login(String emailAddress, String pass){
@@ -51,5 +67,17 @@ public class LoginPage extends TestBase {
         loginButton.click();
 
         return new HomePage(); //this method type is "public HomePage" because the login flow should navigate the user to the homepage, and hence return the HomePage
+    }
+
+    public WebElement failedLoginValidationBlock(){
+        return failedLoginValidationBlock;
+    }
+
+    public String failedLoginValidationMessageLineOne(){
+        return failedLoginValidationMessageLineOne.getText();
+    }
+
+    public String failedLoginValidationMessageLineTwo(){
+        return failedLoginValidationMessageLineTwo.getText();
     }
 }

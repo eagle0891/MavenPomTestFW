@@ -26,8 +26,6 @@ public class TestBase {
             FileInputStream ip = new FileInputStream(
                     "C:\\Users\\upa01\\OneDrive\\Documents\\Automation\\Git\\MavenPomTestFW\\src\\main\\java\\com\\site\\config\\config.properties");
             prop.load(ip);
-        } catch (FileNotFoundException e){
-            e.printStackTrace();
         } catch (IOException e){
             e.printStackTrace();
         }
