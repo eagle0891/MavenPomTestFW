@@ -31,11 +31,26 @@ public class HomePageTest extends TestBase {
     }
 
     @Test(priority = 2)
-    public void verifyMenuIconsTest() throws InterruptedException {
+    public void verifyMenuIconsTest(){
         System.out.println("Menu icon tests");
         Assert.assertTrue(homePage.verifyHomeMenuIconIsDisplayed(), "Home Menu icon is NOT displayed");
         Assert.assertTrue(homePage.verifyCalendarMenuIconIsDisplayed(), "Calendar Menu icon is NOT displayed");
         Assert.assertTrue(homePage.verifyContactsMenuIconIsDisplayed(), "Contacts Menu icon is NOT displayed");
+    }
+
+    @Test(priority = 3)
+    public void clickOnHomeMenuIcon(){
+        homePage.clickOnHomeIcon();
+    }
+
+    @Test(priority = 4)
+    public void clickOnCalendarMenuIcon(){
+        homePage.clickOnCalendarIcon();
+    }
+
+    @Test(priority = 3)
+    public void clickOnContactsMenuIcon(){
+        homePage.clickOnContactsIcon();
     }
 
     @AfterMethod

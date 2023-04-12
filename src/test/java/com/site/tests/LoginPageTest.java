@@ -50,7 +50,7 @@ public class LoginPageTest extends TestBase {
         loginPage.login("", "");
         Assert.assertTrue(loginPage.failedLoginValidationBlock().isDisplayed());
         Assert.assertEquals(loginPage.failedLoginValidationMessageLineOne(), "Something went wrong...");
-        Assert.assertEquals(loginPage.failedLoginValidationMessageLineTwo(), "Invalid request ");
+        Assert.assertEquals(loginPage.failedLoginValidationMessageLineTwo(), "Invalid request");
     }
 
     @AfterMethod
