@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f45361-ee00-4dbd-9ae8-4ef261767177" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/testng_regression.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/testng_sanity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/tests/ContactsPageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/site/testdata/FreeCRM_Data.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/site/pages/ContactsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/site/pages/ContactsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/site/util/TestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/site/util/TestUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/tests/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/tests/HomePageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/tests/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/tests/LoginPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/tests/ContactsPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/tests/ContactsPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +36,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/upa01/OneDrive/Documents/Automation/Git/MavenPomTestFW/target",
+    "last_opened_file_path": "C:/Users/upa01/OneDrive/Documents/Automation/Git/MavenPomTestFW/src/main/java/com/site/testdata",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -50,8 +47,11 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.site.pages" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\upa01\OneDrive\Documents\Automation\Git\MavenPomTestFW\src\main\java\com\site\testdata" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/upa01/OneDrive/Documents/Automation/Git/MavenPomTestFW/src/resources/testng_regression.xml">
+  <component name="RunManager" selected="TestNG.ContactsPageTest.createContactTest">
     <configuration name="C:/Users/upa01/OneDrive/Documents/Automation/Git/MavenPomTestFW/src/resources/testng_regression.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MavenPomTestFW" />
       <shortenClasspath name="NONE" />
@@ -94,7 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ContactsPageTest.createContactTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MavenPomTestFW" />
       <extension name="coverage">
         <pattern>
@@ -103,25 +103,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.site.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.site.tests.HomePageTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HomePageTest.verifyUserNameIsDisplayed" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MavenPomTestFW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.site.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.site.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.site.tests.HomePageTest" />
-      <option name="METHOD_NAME" value="verifyUserNameIsDisplayed" />
+      <option name="MAIN_CLASS_NAME" value="com.site.tests.ContactsPageTest" />
+      <option name="METHOD_NAME" value="createContactTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -129,7 +112,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginPageTest.blankLoginValidation" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ContactsPageTest.selectDefaultDropdownView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MavenPomTestFW" />
       <extension name="coverage">
         <pattern>
@@ -138,8 +121,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.site.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.site.tests.LoginPageTest" />
-      <option name="METHOD_NAME" value="blankLoginValidation" />
+      <option name="MAIN_CLASS_NAME" value="com.site.tests.ContactsPageTest" />
+      <option name="METHOD_NAME" value="selectDefaultDropdownView" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContactsPageTest.selectSearchOptionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MavenPomTestFW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.site.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.site.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.site.tests.ContactsPageTest" />
+      <option name="METHOD_NAME" value="selectSearchOptionTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -148,19 +149,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.ContactsPageTest.createContactTest" />
+      <item itemvalue="TestNG.ContactsPageTest.selectDefaultDropdownView" />
+      <item itemvalue="TestNG.ContactsPageTest.selectSearchOptionTest" />
       <item itemvalue="TestNG.C:/Users/upa01/OneDrive/Documents/Automation/Git/MavenPomTestFW/src/resources/testng_regression.xml" />
       <item itemvalue="TestNG.ContactsPageTest" />
-      <item itemvalue="TestNG.HomePageTest" />
-      <item itemvalue="TestNG.HomePageTest.verifyUserNameIsDisplayed" />
-      <item itemvalue="TestNG.LoginPageTest.blankLoginValidation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactsPageTest.createContactTest" />
+        <item itemvalue="TestNG.ContactsPageTest.selectSearchOptionTest" />
+        <item itemvalue="TestNG.ContactsPageTest.selectDefaultDropdownView" />
         <item itemvalue="TestNG.C:/Users/upa01/OneDrive/Documents/Automation/Git/MavenPomTestFW/src/resources/testng_regression.xml" />
         <item itemvalue="TestNG.ContactsPageTest" />
-        <item itemvalue="TestNG.HomePageTest.verifyUserNameIsDisplayed" />
-        <item itemvalue="TestNG.HomePageTest" />
-        <item itemvalue="TestNG.LoginPageTest.blankLoginValidation" />
       </list>
     </recent_temporary>
   </component>
