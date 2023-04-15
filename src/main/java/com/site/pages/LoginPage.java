@@ -1,6 +1,7 @@
 package com.site.pages;
 
 import com.site.base.TestBase;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -41,26 +42,32 @@ public class LoginPage extends TestBase {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Get page title")
     public String validateLoginPageTitle(){
         return driver.getTitle();
     }
 
+    @Step("Get page forgot password link")
     public WebElement forgotPasswordLink(){
         return forgotPasswordLink;
     }
 
+    @Step("Get page forgot password text")
     public String forgotPasswordText(){
         return forgotPasswordLink.getText();
     }
 
+    @Step("Get page sign up message text")
     public String signUpMessageText(){
         return signUpMessage.getText();
     }
 
+    @Step("Get page sign up link")
     public WebElement getSignUpMessageLink(){
         return signUpLink;
     }
 
+    @Step("Login with username: {0}, and password: {1}")
     public HomePage login(String emailAddress, String pass){
         emailField.sendKeys(emailAddress);
         passwordField.sendKeys(pass);
@@ -69,14 +76,17 @@ public class LoginPage extends TestBase {
         return new HomePage(); //this method type is "public HomePage" because the login flow should navigate the user to the homepage, and hence return the HomePage
     }
 
+    @Step("Get failed login validation block")
     public WebElement failedLoginValidationBlock(){
         return failedLoginValidationBlock;
     }
 
+    @Step("Get failed login validation message (line one)")
     public String failedLoginValidationMessageLineOne(){
         return failedLoginValidationMessageLineOne.getText();
     }
 
+    @Step("Get failed login validation message (line two)")
     public String failedLoginValidationMessageLineTwo(){
         return failedLoginValidationMessageLineTwo.getText();
     }

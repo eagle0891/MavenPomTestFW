@@ -1,5 +1,7 @@
 package com.site.base;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.site.util.TestUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -8,16 +10,18 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.awt.*;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-
 public class TestBase {
 
     public static WebDriver driver;
     public static Properties prop;
+    public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
 
     public TestBase(){ // this is the main constructor of this class. The "super" keyword from child classes will allow them to call this constructor (i.e. to ensure prop is accessible)
 
@@ -30,6 +34,12 @@ public class TestBase {
             e.printStackTrace();
         }
     }
+
+    protected static synchronized WebDriver getDriver() {
+        return tdriver.get();
+    }
+
+    /************** INITIALIZE BROWSERS *********************/
 
     public static void initialization(){
         String browserName = prop.getProperty("browser");
@@ -53,5 +63,19 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 
         driver.get(prop.getProperty("url"));
+    }
+
+    /************** EXTENT REPORTS *********************/
+
+    public static final ExtentReports extentReports = new ExtentReports();
+    public static final ExtentSparkReporter sparkReporter = new ExtentSparkReporter("ExtentSparkReport.html");
+    public static final File file = new File("ExtentSparkReport.html");
+    public static void initializeExtentReports(){
+        extentReports.attachReporter(sparkReporter);
+    }
+
+    public static void flushExtentReports() throws IOException {
+        extentReports.flush();
+//        Desktop.getDesktop().browse(new File("ExtentSparkReport.html").toURI()); //To automatically open  the report once the test has finished.
     }
 }

@@ -4,12 +4,13 @@
 
     <listeners>
         <!--        <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />-->
+                <listener class-name="com.site.listeners.TestAllureReportListener" />
     </listeners>
 
     <test name="Free CRM Test Cases">
         <classes>
-            <class name="com.site.tests.LoginPageTest"></class>
-            <class name="com.site.tests.HomePageTest"></class>
+            <class name="com.site.tests.LoginPageTest"/>
+            <class name="com.site.tests.HomePageTest"/>
         </classes>
     </test>
 </suite>
