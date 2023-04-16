@@ -1,8 +1,11 @@
-package com.site.tests;
+package com.site.stepDefinitons;
 
 import com.site.base.TestBase;
 import com.site.listeners.TestAllureReportListener;
 import com.site.pages.LoginPage;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -21,6 +24,7 @@ public class LoginPageTest extends TestBase {
     }
 
     @BeforeMethod
+    @Given("^the user is on the login page$")
     public void setUp(){
 //        initializeExtentReports();
         initialization();
@@ -31,16 +35,18 @@ public class LoginPageTest extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @Description("Test case description: Verify that the log in page title is displayed as expected")
     @Story("Story name: Check that the log in title is displayed")
+    @Given("^the page title is correct$")
     public void loginPageTitleTest(){
         System.out.println("login page title test");
         String pageTitle = loginPage.validateLoginPageTitle();
-        Assert.assertEquals(pageTitle, "Cogmento CRM");
+        Assert.assertEquals(pageTitle, "Cogmento CRM", "The page title does not match the expected value:");
     }
 
     @Test(priority=2)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Test case description: Verify that the forgot password section is displayed as expected")
     @Story("Story name: Check that the forgot password section is displayed")
+    @And("^the Forgot Password section is displayed$")
     public void verifyForgotPasswordSection(){
         System.out.println("Verifying forgot password section");
         loginPage.forgotPasswordLink().isDisplayed();
@@ -51,6 +57,7 @@ public class LoginPageTest extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Test case description: Verify that the sign up section is displayed as expected")
     @Story("Story name: Check that sign up section is displayed")
+    @And("^the Sign Up section is displayed$")
     public void verifySignUpSection(){
         System.out.println("Verifying Sign up section");
         Assert.assertEquals(loginPage.signUpMessageText(),"No Account? Registration takes only a few seconds? Sign Up");
@@ -61,9 +68,10 @@ public class LoginPageTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Test case description: Verify that user can log in successfully.")
     @Story("Story name: Check that user can log in successfully")
+    @Then("^login with existing user credentials$")
     public void successfulLogin(){
         System.out.println("Login test");
-        loginPage.login(prop.getProperty("email"), prop.getProperty("password") );
+        loginPage.login(prop.getProperty("email"), prop.getProperty("password"));
     }
 
     @Test(priority = 5)

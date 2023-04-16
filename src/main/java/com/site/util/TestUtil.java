@@ -15,7 +15,7 @@ public class TestUtil extends TestBase {
     public static long PAGE_LOAD_TIMEOUT = 20;
     public static long IMPLICIT_WAIT = 10;
 
-    public static String TESTDATA_SHEET_PATH = "C:\\Users\\upa01\\OneDrive\\Documents\\Automation\\Git\\MavenPomTestFW\\src\\main\\java\\com\\site\\testdata\\FreeCRM_Data.xlsx";
+    public static String TESTDATA_SHEET_PATH = "src\\main\\java\\com\\site\\testdata\\FreeCRM_Data.xlsx";
 
     static Workbook book;
     static Sheet sheet;

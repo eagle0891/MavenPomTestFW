@@ -10,10 +10,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -28,9 +26,10 @@ public class TestBase {
         try {
             prop = new Properties();
             FileInputStream ip = new FileInputStream(
-                    "C:\\Users\\upa01\\OneDrive\\Documents\\Automation\\Git\\MavenPomTestFW\\src\\main\\java\\com\\site\\config\\config.properties");
+                    "src\\main\\java\\com\\site\\config\\config.properties");
             prop.load(ip);
         } catch (IOException e){
+            System.out.println("** Can't find the config.properties file... **");
             e.printStackTrace();
         }
     }

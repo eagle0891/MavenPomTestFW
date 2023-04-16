@@ -1,4 +1,4 @@
-package com.site.tests;
+package com.site.stepDefinitons;
 
 import com.site.base.TestBase;
 import com.site.listeners.TestAllureReportListener;
@@ -6,6 +6,8 @@ import com.site.pages.ContactsPage;
 import com.site.pages.HomePage;
 import com.site.pages.LoginPage;
 import com.site.util.TestUtil;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -24,6 +26,7 @@ public class ContactsPageTest extends TestBase {
     }
 
     @BeforeMethod
+    @Given("^the user is on the contacts page$")
     public void setUp() throws InterruptedException {
         initialization();
         initializeExtentReports();
@@ -31,11 +34,12 @@ public class ContactsPageTest extends TestBase {
         loginPage = new LoginPage();
         homePage = loginPage.login(prop.getProperty("email"), prop.getProperty("password"));
 
-        Thread.sleep(5000);
+        Thread.sleep(5000); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
         homePage.clickOnContactsIcon();
     }
 
     @Test(priority = 1)
+    @Then("^the contacts page healthcheck is successful$")
     public void contactsPageHealthCheck() {
         Assert.assertTrue(contactsPage.contactsPageHeaderIsDisplayed(), "Contacts page header is not displayed");
         Assert.assertEquals(contactsPage.contactsPageTitleText(), "Contacts", "Contacts header does not match expected value");
@@ -67,15 +71,16 @@ public class ContactsPageTest extends TestBase {
     }
 
     @Test(priority = 4, dataProvider = "getCRMTestData")
+    @Then("^create new contacts '(.*)' '(.*)' '(.*)'$")
     public void createContactTest(String firstName, String middleName, String lastName) throws InterruptedException {
         contactsPage.clickCreateContactButton();
         Assert.assertTrue(contactsPage.firstNameFieldIsDisplayed(), "First name field is not displayed");
         contactsPage.populateCreateContactForm(firstName, middleName, lastName);
         contactsPage.clickSaveButton();
         contactsPage.contactNameIsDisplayed();
-        Thread.sleep(2000);
+        Thread.sleep(2000); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
         Assert.assertEquals(contactsPage.getContactNameText(), firstName + " " + lastName, "Contact name does not match expected value");
-        Thread.sleep(5000);
+        Thread.sleep(5000); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
     }
 
     @AfterMethod

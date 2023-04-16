@@ -1,9 +1,11 @@
-package com.site.tests;
+package com.site.stepDefinitons;
 
 import com.site.base.TestBase;
 import com.site.listeners.TestAllureReportListener;
 import com.site.pages.HomePage;
 import com.site.pages.LoginPage;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -25,6 +27,7 @@ public class HomePageTest extends TestBase {
     }
 
     @BeforeMethod
+    @Given("^the user is on the Homepage page$")
     public void setUp(){
         initialization();
         loginPage = new LoginPage();
@@ -35,6 +38,7 @@ public class HomePageTest extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @Description("Test case description: Verify that the user name is displayed on the homepage as expected")
     @Story("Story name: Check that the user name is displayed")
+    @Then("^the username is displayed correctly after login$")
     public void verifyUserNameIsDisplayed(){
         Assert.assertTrue(homePage.verifyUserNameIsDisplayed(), "Username after log is not displayed");
         Assert.assertEquals(homePage.userNameText(), "Ugo Agwo", "Username does not match expected value");

@@ -9,9 +9,9 @@
 
     <test name="Free CRM Test Cases">
         <classes>
-            <class name="com.site.tests.LoginPageTest"/>
-            <class name="com.site.tests.HomePageTest"/>
-            <class name="com.site.tests.ContactsPageTest"/>
+            <class name="com.site.stepDefinitons.LoginPageTest"/>
+            <class name="com.site.stepDefinitons.HomePageTest"/>
+            <class name="com.site.stepDefinitons.ContactsPageTest"/>
         </classes>
     </test>
 </suite>
