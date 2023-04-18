@@ -4,11 +4,15 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.site.util.TestUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -77,4 +81,24 @@ public class TestBase {
         extentReports.flush();
 //        Desktop.getDesktop().browse(new File("ExtentSparkReport.html").toURI()); //To automatically open  the report once the test has finished.
     }
+
+    /******************** CUSTOM WAITS ********************/
+
+    //Wait for element to be clickable before clicking
+    public WebElement waitForElementToBeClickable(WebDriver driver, WebElement locator, Duration timeout){
+        new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+        return locator;
+    }
+
+    //Wait for element to be visible
+    public WebElement waitForElementToBeVisible(WebDriver driver, WebElement locator, Duration timeout){
+        new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOf(locator));
+        return locator;
+    }
+
+    public WebElement waitForElementToBeInvisible(WebDriver driver, WebElement locator, Duration timeout){
+        new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.invisibilityOf(locator));
+        return locator;
+    }
+
 }

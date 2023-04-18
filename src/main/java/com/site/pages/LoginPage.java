@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class LoginPage extends TestBase {
 
     //PageFactory
@@ -72,7 +74,6 @@ public class LoginPage extends TestBase {
         emailField.sendKeys(emailAddress);
         passwordField.sendKeys(pass);
         loginButton.click();
-
         return new HomePage(); //this method type is "public HomePage" because the login flow should navigate the user to the homepage, and hence return the HomePage
     }
 

@@ -69,7 +69,7 @@ public class LoginPageTest extends TestBase {
     @Description("Test case description: Verify that user can log in successfully.")
     @Story("Story name: Check that user can log in successfully")
     @Then("^login with existing user credentials$")
-    public void successfulLogin(){
+    public void successfulLogin() throws InterruptedException {
         System.out.println("Login test");
         loginPage.login(prop.getProperty("email"), prop.getProperty("password"));
     }

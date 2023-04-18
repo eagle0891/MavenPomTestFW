@@ -33,8 +33,6 @@ public class ContactsPageTest extends TestBase {
         contactsPage = new ContactsPage();
         loginPage = new LoginPage();
         homePage = loginPage.login(prop.getProperty("email"), prop.getProperty("password"));
-
-        Thread.sleep(5000); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
         homePage.clickOnContactsIcon();
     }
 
@@ -73,14 +71,17 @@ public class ContactsPageTest extends TestBase {
     @Test(priority = 4, dataProvider = "getCRMTestData")
     @Then("^create new contacts '(.*)' '(.*)' '(.*)'$")
     public void createContactTest(String firstName, String middleName, String lastName) throws InterruptedException {
+        contactsPage.waitForElementToAppearAndDisappear();
+        contactsPage.clickCreateContactButton();
+        Thread.sleep(500); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
+        contactsPage.clickCancelButton();
+        Thread.sleep(500); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
         contactsPage.clickCreateContactButton();
         Assert.assertTrue(contactsPage.firstNameFieldIsDisplayed(), "First name field is not displayed");
         contactsPage.populateCreateContactForm(firstName, middleName, lastName);
         contactsPage.clickSaveButton();
-        contactsPage.contactNameIsDisplayed();
-        Thread.sleep(2000); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
+        contactsPage.contactsTableIsDisplayed();
         Assert.assertEquals(contactsPage.getContactNameText(), firstName + " " + lastName, "Contact name does not match expected value");
-        Thread.sleep(5000); //FOR DEBUGGING - REPLACE WITH WAIT CUSTOM METHOD
     }
 
     @AfterMethod

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class HomePage extends TestBase {
 
     @FindBy(xpath="//i[contains(@class, 'home ico')]")
@@ -75,7 +77,7 @@ public class HomePage extends TestBase {
 
     @Step("Click on contacts menu icon")
     public ContactsPage clickOnContactsIcon(){
-        contactsMenuIcon.click();
+        waitForElementToBeClickable(driver, contactsMenuIcon, Duration.ofSeconds(20)).click();
         return new ContactsPage();
     }
 

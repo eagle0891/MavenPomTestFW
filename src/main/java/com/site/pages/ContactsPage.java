@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.time.Duration;
 import java.util.List;
 
 public class ContactsPage extends TestBase {
@@ -29,6 +30,9 @@ public class ContactsPage extends TestBase {
 
     @FindBy(xpath = "//button[contains(@class, 'ui linkedin button')]/i[contains(@class, 'edit icon')]")
     WebElement createButton;
+
+    @FindBy(xpath = "//button[contains(@class, 'ui button')]/i[contains(@class, 'cancel icon')]")
+    WebElement cancelButton;
 
     @FindBy(xpath = "//div[contains(@class, 'ui active visible selection scrolling dropdown')]//span[contains(@class, 'text')]")
     WebElement defaultViewDropdownOption;
@@ -66,6 +70,12 @@ public class ContactsPage extends TestBase {
     @FindBy(xpath = "//span[@class='selectable ']")
     WebElement contactName;
 
+    @FindBy(xpath = "//div[@class='ui active inline loader']")
+    WebElement inlineLoader;
+
+    @FindBy(xpath = "//div[@class='ui attached tabular menu']")
+    WebElement contactsTable;
+
     public ContactsPage(){
         PageFactory.initElements(driver, this);
     }
@@ -100,6 +110,22 @@ public class ContactsPage extends TestBase {
         return middleNameField;
     }
 
+    public WebElement getCancelButton(){
+        return cancelButton;
+    }
+
+    public WebElement getCreateContactButton(){
+        return createButton;
+    }
+
+    public WebElement getInlineLoader(){
+        return inlineLoader;
+    }
+
+    public WebElement getContactsTable(){
+        return contactsTable;
+    }
+
     /***************** BOOLEANS *******************/
 
     public Boolean contactsPageHeaderIsDisplayed(){
@@ -123,11 +149,15 @@ public class ContactsPage extends TestBase {
     }
 
     public boolean firstNameFieldIsDisplayed(){
-        return firstNameField.isDisplayed();
+        return waitForElementToBeVisible(driver, firstNameField, Duration.ofSeconds(20)).isDisplayed();
     }
 
     public boolean contactNameIsDisplayed(){
         return contactName.isDisplayed();
+    }
+
+    public boolean contactsTableIsDisplayed(){
+        return waitForElementToBeVisible(driver, getContactsTable(), Duration.ofSeconds(10)).isDisplayed();
     }
 
     /***************** STRINGS ********************/
@@ -141,7 +171,7 @@ public class ContactsPage extends TestBase {
     }
 
     public String getContactNameText(){
-        return contactName.getText();
+        return waitForElementToBeVisible(driver, contactName, Duration.ofSeconds(20)).getText();
     }
 
     /****************** VOIDS ********************/
@@ -174,7 +204,11 @@ public class ContactsPage extends TestBase {
     }
 
     public void clickCreateContactButton(){
-        createButton.click();
+        waitForElementToBeClickable(driver, getCreateContactButton(), Duration.ofSeconds(10)).click();
+    }
+
+    public void clickCancelButton(){
+        waitForElementToBeClickable(driver, getCancelButton(), Duration.ofSeconds(10)).click();
     }
 
     public void populateCreateContactForm(String firstName, String middleName, String lastName){
@@ -185,6 +219,11 @@ public class ContactsPage extends TestBase {
 
     public void clickSaveButton(){
         saveButton.click();
+    }
+
+    public void waitForElementToAppearAndDisappear(){
+        waitForElementToBeVisible(driver, getInlineLoader(), Duration.ofSeconds(2));
+        waitForElementToBeInvisible(driver, getInlineLoader(), Duration.ofSeconds(2));
     }
 }
 
