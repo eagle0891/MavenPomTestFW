@@ -64,7 +64,6 @@ public class TestBase {
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
-
         driver.get(prop.getProperty("url"));
     }
 
@@ -100,5 +99,4 @@ public class TestBase {
         new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.invisibilityOf(locator));
         return locator;
     }
-
 }
