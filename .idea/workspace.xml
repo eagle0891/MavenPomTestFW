@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f45361-ee00-4dbd-9ae8-4ef261767177" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/site/config/amazon.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/site/pages/Amazon/Homepage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/Homepage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/site/config/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/site/config/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/site/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/site/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/features/ContactsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/features/ContactsPage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/site/pages/Amazon/Homepage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,10 +57,11 @@
       <recent name="C:\Users\upa01\OneDrive\Documents\Automation\Git\MavenPomTestFW\src\main\java\com\site\testdata" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.site.pages.Amazon" />
       <recent name="com.site.listeners" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: Homepage">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Search for a product">
     <configuration name="Feature: Homepage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" />
@@ -72,6 +70,26 @@
       <module name="MavenPomTestFW" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
       <option name="SUGGESTED_NAME" value="Feature: Homepage" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Click through header menu links" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" />
+      <option name="GLUE" value="com.site.stepDefinitons.Amazon" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="MavenPomTestFW" />
+      <option name="NAME_FILTER" value="^Click through header menu links$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Click through header menu links$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Click through header menu links" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -103,37 +121,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactsPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Search for a product" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" />
+      <option name="GLUE" value="com.site.stepDefinitons.Amazon" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="MavenPomTestFW" />
+      <option name="NAME_FILTER" value="^Search for a product$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Search for a product$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Search for a product" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.site.stepDefinitons.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.site.stepDefinitons" />
-      <option name="MAIN_CLASS_NAME" value="com.site.stepDefinitons.ContactsPageTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContactsPageTest.createContactTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MavenPomTestFW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.site.stepDefinitons.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.site.stepDefinitons" />
-      <option name="MAIN_CLASS_NAME" value="com.site.stepDefinitons.ContactsPageTest" />
-      <option name="METHOD_NAME" value="createContactTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,19 +160,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Scenario: Search for a product" />
       <item itemvalue="Cucumber Java.Feature: Homepage" />
+      <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
       <item itemvalue="Cucumber Java.Scenario: Navigate ito the homepage" />
-      <item itemvalue="TestNG.ContactsPageTest" />
-      <item itemvalue="TestNG.ContactsPageTest.createContactTest" />
       <item itemvalue="TestNG.LoginPageTest.successfulLogin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Search for a product" />
         <item itemvalue="Cucumber Java.Feature: Homepage" />
+        <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
         <item itemvalue="Cucumber Java.Scenario: Navigate ito the homepage" />
         <item itemvalue="TestNG.LoginPageTest.successfulLogin" />
-        <item itemvalue="TestNG.ContactsPageTest.createContactTest" />
-        <item itemvalue="TestNG.ContactsPageTest" />
       </list>
     </recent_temporary>
   </component>

@@ -6,3 +6,14 @@ Feature: Amazon homepage
 
   Scenario: Perform homepage healthcheck
     Then I should see the Amazon logo
+
+  Scenario: Click through header menu links
+    Then I should see the header menu links
+    And the landing page is correct after clicking on the header menu links
+
+#  Scenario: Click through footer menu links
+#    Then I should see the footer menu links
+
+  Scenario: Search for a product
+    When I search for a product 'watch'
+    And I should see the search results page for 'watch'
