@@ -37,7 +37,6 @@ public class HomePage extends TestBase {
         return homeMenuIcon;
     }
 
-
     @Step("Get Calendar menu icon")
     public WebElement getCalendarIcon(){
         return calendarMenuIcon;
