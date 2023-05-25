@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f45361-ee00-4dbd-9ae8-4ef261767177" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/Homepage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/site/pages/Amazon/Homepage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" afterDir="false" />
     </list>
@@ -61,7 +62,7 @@
       <recent name="com.site.listeners" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Search for a product">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Search for a product (1)">
     <configuration name="Feature: Homepage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" />
@@ -121,6 +122,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: Search for a product (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" />
+      <option name="GLUE" value="com.site.stepDefinitons.Amazon" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="MavenPomTestFW" />
+      <option name="NAME_FILTER" value="^Search for a product$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Search for a product$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Search for a product" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: Search for a product" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" />
@@ -141,38 +162,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginPageTest.successfulLogin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MavenPomTestFW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.site.stepDefinitons.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.site.stepDefinitons" />
-      <option name="MAIN_CLASS_NAME" value="com.site.stepDefinitons.LoginPageTest" />
-      <option name="METHOD_NAME" value="successfulLogin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Scenario: Search for a product (1)" />
       <item itemvalue="Cucumber Java.Scenario: Search for a product" />
       <item itemvalue="Cucumber Java.Feature: Homepage" />
       <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
       <item itemvalue="Cucumber Java.Scenario: Navigate ito the homepage" />
-      <item itemvalue="TestNG.LoginPageTest.successfulLogin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Search for a product (1)" />
         <item itemvalue="Cucumber Java.Scenario: Search for a product" />
         <item itemvalue="Cucumber Java.Feature: Homepage" />
         <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
         <item itemvalue="Cucumber Java.Scenario: Navigate ito the homepage" />
-        <item itemvalue="TestNG.LoginPageTest.successfulLogin" />
       </list>
     </recent_temporary>
   </component>

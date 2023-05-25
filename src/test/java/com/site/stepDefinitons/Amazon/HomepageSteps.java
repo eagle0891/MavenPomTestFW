@@ -41,13 +41,22 @@ public class HomepageSteps extends TestBase {
         homepage.getHeaderMenuLinksAndVerifyUrl();
     }
 
-    @When("^I search for a product '(.*)'$")
+    @And("^I search for a product '(.*)'$")
     public void searchForAProduct(String searchTerm) {
         homepage.searchForAProduct(searchTerm);
     }
 
-    @And("^I should see the search results page for '(.*)'$")
+    @And("^I see the search results for '(.*)'$")
     public void verifyTheSearchResultsPage(String searchTerm) {
         homepage.verifySearchResultsConfirmationText(searchTerm);
+    }
+
+    @When("I click on a '(.*)' product")
+    public void clickOnAProduct() {
+
+    }
+
+    @Then("I should see the product details page for the '(.*)' product")
+    public void iShouldSeeTheProductDetailsPageForTheBrandProduct() {
     }
 }

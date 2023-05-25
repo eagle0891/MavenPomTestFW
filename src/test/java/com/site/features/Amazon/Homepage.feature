@@ -13,7 +13,3 @@ Feature: Amazon homepage
 
 #  Scenario: Click through footer menu links
 #    Then I should see the footer menu links
-
-  Scenario: Search for a product
-    When I search for a product 'watch'
-    And I should see the search results page for 'watch'
