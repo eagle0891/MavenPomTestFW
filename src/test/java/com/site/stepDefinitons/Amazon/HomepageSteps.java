@@ -50,13 +50,4 @@ public class HomepageSteps extends TestBase {
     public void verifyTheSearchResultsPage(String searchTerm) {
         homepage.verifySearchResultsConfirmationText(searchTerm);
     }
-
-    @When("I click on a '(.*)' product")
-    public void clickOnAProduct() {
-
-    }
-
-    @Then("I should see the product details page for the '(.*)' product")
-    public void iShouldSeeTheProductDetailsPageForTheBrandProduct() {
-    }
 }
