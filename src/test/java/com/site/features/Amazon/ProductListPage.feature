@@ -7,8 +7,21 @@ Feature: Product List Page
   Scenario Outline: Search for a product
     And I search for a product '<searchTerm>'
     And I see the search results for '<searchTerm>'
-#    When I click on a '<brand>' product
-#    Then I should see the product details page for the '<brand>' product
+    When I click on a '<brand>' product
+#    Then I should see the product details page
+    Examples:
+      | searchTerm | brand |
+      | watch      | Casio |
+
+  Scenario Outline: Add to cart and remove from cart
+    And I search for a product '<searchTerm>'
+    And I see the search results for '<searchTerm>'
+    When I click on a '<brand>' product
+    When I add item to cart
+    Then I should see the mini cart
+#    And the subtotal should be correct
+#    When I delete the item from cart
+#    Then I should see the cart page empty
     Examples:
       | searchTerm | brand |
       | watch      | Casio |

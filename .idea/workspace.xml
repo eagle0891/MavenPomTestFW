@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f45361-ee00-4dbd-9ae8-4ef261767177" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,9 +172,9 @@
       <list>
         <item itemvalue="Cucumber Java.Scenario: Search for a product (1)" />
         <item itemvalue="Cucumber Java.Scenario: Search for a product" />
-        <item itemvalue="Cucumber Java.Feature: Homepage" />
-        <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
         <item itemvalue="Cucumber Java.Scenario: Navigate ito the homepage" />
+        <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
+        <item itemvalue="Cucumber Java.Feature: Homepage" />
       </list>
     </recent_temporary>
   </component>
