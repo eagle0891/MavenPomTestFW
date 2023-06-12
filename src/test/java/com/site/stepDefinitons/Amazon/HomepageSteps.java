@@ -2,6 +2,7 @@ package com.site.stepDefinitons.Amazon;
 
 import com.site.base.TestBase;
 import com.site.pages.Amazon.Homepage;
+import com.site.pages.Amazon.ProductListPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,6 +11,7 @@ import org.testng.Assert;
 
 public class HomepageSteps extends TestBase {
     Homepage homepage;
+    ProductListPage productListPage;
 
     public HomepageSteps() {
         super();
@@ -47,7 +49,10 @@ public class HomepageSteps extends TestBase {
     }
 
     @And("^I see the search results for '(.*)'$")
-    public void verifyTheSearchResultsPage(String searchTerm) {
+    public void verifyTheSearchResultsPage(String searchTerm) throws InterruptedException {
+        productListPage = new ProductListPage();
         homepage.verifySearchResultsConfirmationText(searchTerm);
+        productListPage.getProducts();
+
     }
 }

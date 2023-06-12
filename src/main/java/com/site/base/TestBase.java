@@ -13,6 +13,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,6 +26,7 @@ public class TestBase {
     public static WebDriver driver;
     public static Properties prop;
     public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
+    public static final Logger LOG = LoggerFactory.getLogger(TestBase.class);
 
     public TestBase(){ // this is the main constructor of this class. The "super" keyword from child classes will allow them to call this constructor (i.e. to ensure prop is accessible)
 

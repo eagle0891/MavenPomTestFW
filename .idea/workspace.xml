@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f45361-ee00-4dbd-9ae8-4ef261767177" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/site/models/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/site/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/site/base/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" afterDir="false" />
@@ -62,14 +63,15 @@
     </key>
   </component>
   <component name="RunManager" selected="Cucumber Java.Scenario: Search for a product (1)">
-    <configuration name="Feature: Homepage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Add to cart and remove from cart" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/Homepage.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" />
       <option name="GLUE" value="com.site.stepDefinitons.Amazon" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="MavenPomTestFW" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: Homepage" />
+      <option name="NAME_FILTER" value="^Add to cart and remove from cart$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Add to cart and remove from cart$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Add to cart and remove from cart" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -162,19 +164,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Scenario: Add to cart and remove from cart" />
       <item itemvalue="Cucumber Java.Scenario: Search for a product (1)" />
       <item itemvalue="Cucumber Java.Scenario: Search for a product" />
-      <item itemvalue="Cucumber Java.Feature: Homepage" />
       <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
       <item itemvalue="Cucumber Java.Scenario: Navigate ito the homepage" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Cucumber Java.Scenario: Search for a product (1)" />
+        <item itemvalue="Cucumber Java.Scenario: Add to cart and remove from cart" />
         <item itemvalue="Cucumber Java.Scenario: Search for a product" />
         <item itemvalue="Cucumber Java.Scenario: Navigate ito the homepage" />
         <item itemvalue="Cucumber Java.Scenario: Click through header menu links" />
-        <item itemvalue="Cucumber Java.Feature: Homepage" />
       </list>
     </recent_temporary>
   </component>

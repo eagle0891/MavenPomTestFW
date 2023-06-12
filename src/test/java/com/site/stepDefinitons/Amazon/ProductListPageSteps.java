@@ -14,9 +14,10 @@ public class ProductListPageSteps {
     }
 
     @When("^I click on a '(.*)' product$")
-    public void clickOnAProduct(String brand) {
+    public void clickOnAProduct(String brand) throws InterruptedException {
         productListPage = new ProductListPage();
-        productListPage.clickOnAProduct(brand);
+//        productListPage.clickOnAProduct(brand);
+        productListPage.findProductTypeAndClick(brand);
     }
 
     @Then("^I should see the product details page for the '(.*)' product$")
