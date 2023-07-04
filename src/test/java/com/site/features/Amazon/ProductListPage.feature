@@ -11,7 +11,7 @@ Feature: Product List Page
 #    Then I should see the product details page
     Examples:
       | searchTerm | brand |
-      | watch      | Casio |
+      | games      |  |
 
   Scenario Outline: Add to cart and remove from cart
     And I search for a product '<searchTerm>'

@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f45361-ee00-4dbd-9ae8-4ef261767177" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/site/models/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/site/models/GenericProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/site/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/site/base/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/site/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/site/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/features/Amazon/ProductListPage.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/pages/Amazon/ProductListPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/HomepageSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/site/stepDefinitons/Amazon/ProductListPageSteps.java" afterDir="false" />

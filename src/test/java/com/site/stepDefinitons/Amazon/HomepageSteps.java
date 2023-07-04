@@ -52,7 +52,7 @@ public class HomepageSteps extends TestBase {
     public void verifyTheSearchResultsPage(String searchTerm) throws InterruptedException {
         productListPage = new ProductListPage();
         homepage.verifySearchResultsConfirmationText(searchTerm);
-        productListPage.getProducts();
-
+//        productListPage.getProducts();
+        productListPage.getGenericProducts();
     }
 }

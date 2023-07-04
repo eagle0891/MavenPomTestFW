@@ -16,16 +16,17 @@ import java.util.ArrayList;
 public class Product extends TestBase {
     public static ArrayList<Product> ProductCollection;
     boolean isCasio;
+    String brandName;
     String name;
     String description;
     String wholePrice;
     String decimalPricePart;
-//    String productTitleLinkUrl;
     WebElement productWebElement;
     WebElement casioSelection;
     WebElement productImageLink;
 
-    public Product(String productName, String productWholePricePart, String productDecimalPricePart, /*String productTitleLinkURL,*/ WebElement product, boolean isCasio, WebElement casioSelection, WebElement productImageLink) {
+    public Product(String productBrandName, String productName, String productWholePricePart, String productDecimalPricePart, WebElement product, boolean isCasio, WebElement casioSelection, WebElement productImageLink) {
+        this.brandName = productBrandName;
         this.name = productName;
         this.wholePrice = productWholePricePart;
         this.decimalPricePart = productDecimalPricePart;
@@ -33,7 +34,6 @@ public class Product extends TestBase {
         this.casioSelection = casioSelection;
         this.isCasio = isCasio;
         this.productImageLink = productImageLink;
-//        this.productTitleLinkUrl = productTitleLinkURL;
         //add the image selector here somewhere as a webelement
     }
 

@@ -17,7 +17,8 @@ public class ProductListPageSteps {
     public void clickOnAProduct(String brand) throws InterruptedException {
         productListPage = new ProductListPage();
 //        productListPage.clickOnAProduct(brand);
-        productListPage.findProductTypeAndClick(brand);
+//        productListPage.findProductTypeAndClick(brand);
+        productListPage.findProductAndClick(brand);
     }
 
     @Then("^I should see the product details page for the '(.*)' product$")

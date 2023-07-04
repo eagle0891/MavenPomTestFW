@@ -1,15 +1,13 @@
 package com.site.pages.Amazon;
 
+import com.site.models.GenericProduct;
 import com.site.models.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-import java.security.PublicKey;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,15 +51,16 @@ public class ProductListPage {
                 String productDecimalPricePart = product.findElement(PLP_PRODUCT_DECIMAL_PRICE).getText();
                 WebElement productImageLink = product.findElement(PLP_PRODUCT_IMAGE_LINK);
                 String productBrandName = product.findElement(PLP_PRODUCT_BRAND_NAME).getText();
+                String productTitleLinkUrl = product.findElement(PLP_PRODUCT_TITLE_LINK).getAttribute("href");
                 System.out.println("Brand is: " + productBrandName);
                 System.out.println("Product title is: " + productName);
                 System.out.println("Product Price is: £" + productWholePricePart + "." + productDecimalPricePart);
-                boolean isCasio = productName.contains("Casio");
+                boolean isCasio = productBrandName.contains("Casio");
                 WebElement casioSelection = null;
                 if (isCasio) {
                     casioSelection = product.findElement(PLP_PRODUCT_NAME);
                 }
-                Product.ProductCollection.add(new Product(productName, productWholePricePart, productDecimalPricePart, product, isCasio, casioSelection, productImageLink));
+                Product.ProductCollection.add(new Product(productBrandName, productName, productWholePricePart, productDecimalPricePart, product, isCasio, casioSelection, productImageLink));
             } catch (NoSuchElementException e) {
                 System.out.println("**** Element does not contain a product ****" + "\n" + e.getMessage());
             }
@@ -70,24 +69,82 @@ public class ProductListPage {
         return Product.ProductCollection;
     }
 
+    public ArrayList<GenericProduct> getGenericProducts() throws InterruptedException {
+        GenericProduct.ProductCollection = new ArrayList<GenericProduct>();
+        List<WebElement> genericProducts = driver.findElements(productTile);
+        System.out.println("Number of products is: " + genericProducts.size());
+        for (WebElement product : genericProducts) {
+            try {
+                String productName = product.findElement(PLP_PRODUCT_NAME).getText();
+                String productWholePricePart = product.findElement(PLP_PRODUCT_WHOLE_PRICE).getText();
+                String productDecimalPricePart = product.findElement(PLP_PRODUCT_DECIMAL_PRICE).getText();
+                WebElement productImageLink = product.findElement(PLP_PRODUCT_IMAGE_LINK);
+                System.out.println("Product title is: " + productName);
+                System.out.println("Product Price is: £" + productWholePricePart + "." + productDecimalPricePart);
+                GenericProduct.ProductCollection.add(new GenericProduct(productName, productWholePricePart, productDecimalPricePart, product, productImageLink));
+            } catch (NoSuchElementException e) {
+                System.out.println("**** Element does not contain a product ****" + "\n" + e.getMessage());
+            }
+        }
+        System.out.println("Product Collection is: " + GenericProduct.ProductCollection);
+        return GenericProduct.ProductCollection;
+    }
+
     public void findProductTypeAndClick(String productType) throws InterruptedException {
         //clearProductCollectionIfPopulated();
         outer: for (Product product : Product.ProductCollection) {
-            if (productType.equals("Casio")) {
-                if (product.isCasio()) {
-                    System.out.println("*** Casio switch statement being executed ***");
-                    System.out.println("** CASIO PRODUCT FOUND **");
-                    product.display();
-                    //                    waitForElementToBeClickable(driver, product.getProductImageLink(), Duration.ofSeconds(10));
-                    product.getProductImageLink().click();
-                    System.out.println("** CASIO PDP SHOULD BE DISPLAYED **");
-                    break outer;
-                }
-            } else {
-                System.out.println("ERROR : Product type not recognised, please select a valid product type.");
+            System.out.println(productType);
+            switch (productType) {
+                case "Casio":
+                    if (product.isCasio()) {
+                        System.out.println("*** Casio switch statement being executed ***");
+                        System.out.println("** CASIO PRODUCT FOUND **");
+                        product.display();
+    //                    waitForElementToBeClickable(driver, product.getProductImageLink(), Duration.ofSeconds(10));
+                        product.getProductImageLink().click();
+                        System.out.println("** CASIO PDP SHOULD BE DISPLAYED **");
+                        break outer;
+                    }
+                    break;
+                default:
+                System.out.println("ERROR : Product type " + productType + " is not recognised, please select a valid product type.");
             }
         }
     }
+
+    public void findProductAndClick(String productType) throws InterruptedException {
+        //clearProductCollectionIfPopulated();
+        System.out.println(productType);
+        switch (productType) {
+//            case "Casio":
+//                for (Product product : Product.ProductCollection) {
+//                    if (product.isCasio()) {
+//                        System.out.println("*** Casio switch statement being executed ***");
+//                        System.out.println("** CASIO PRODUCT FOUND **");
+//                        product.display();
+//                        //                    waitForElementToBeClickable(driver, product.getProductImageLink(), Duration.ofSeconds(10));
+//                        product.getProductImageLink().click();
+//                        System.out.println("** CASIO PDP SHOULD BE DISPLAYED **");
+//                        break;
+//                    }
+//                }
+//                break;
+            default:
+//                System.out.println("ERROR : Product type " + productType + " is not recognised, please select a valid product type.");
+                for (GenericProduct product : GenericProduct.ProductCollection) {
+                    System.out.println(productType);
+                    product.getProductImageLink().click();
+                }
+        }
+    }
+
+//    public void findGenericProductTypeAndClick(String productType) throws InterruptedException {
+//        //clearProductCollectionIfPopulated();
+//        for (GenericProduct product : GenericProduct.ProductCollection) {
+//            System.out.println(productType);
+//            product.getProductImageLink().click();
+//        }
+//    }
 
     public void clickAddToCart() {
         driver.findElement(addToCartButton).click();
